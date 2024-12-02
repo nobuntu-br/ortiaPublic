@@ -1,10 +1,28 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    dir: 'fontes/backend'
-    args: ['build', '-t', 'gcr.io/ninth-glider-366922/ortiapublic/backend', '.']
-    secretEnv: ['DATABASE_URL', 'API_KEY']
-secrets:
-  - kmsKeyName: "projects/ninth-glider-366922/locations/global/keyRings/cloudbuild/cryptoKeys/secrets"
-    secretEnv:
-      DATABASE_URL: "projects/ninth-glider-366922/secrets/DATABASE_URL/versions/latest"
-      API_KEY: "projects/ninth-glider-366922/secrets/API_KEY/versions/latest"
+    args: ['build', '-t', 'gcr.io/ninth-glider-366922/ortiapublicbackend', '.']
+    dir: ''
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/ninth-glider-366922/ortiapublicbackend']
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args: ['run', 'deploy', 'ortiapublicbackend',
+           '--image=gcr.io/ninth-glider-366922/ortiapublicbackend',
+           '--region=southamerica-east1',
+           '--platform=managed',
+           '--allow-unauthenticated']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/ninth-glider-366922/ortiapublicfrontend', '.']
+    dir: ''
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/ninth-glider-366922/ortiapublicfrontend']
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args: ['run', 'deploy', 'ortiapublicfrontend',
+           '--image=gcr.io/ninth-glider-366922/ortiapublicfrontend',
+           '--region=southamerica-east1',
+           '--platform=managed',
+           '--allow-unauthenticated']
+images:
+  - 'gcr.io/ninth-glider-366922/ortiapublicbackend'
+  - 'gcr.io/ninth-glider-366922/ortiapublicfrontend'
