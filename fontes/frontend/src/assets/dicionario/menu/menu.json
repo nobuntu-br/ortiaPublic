@@ -1,0 +1,94 @@
+{
+    "config":{
+        "modified": "2024-10-23T12:02:23.538542Z",
+        "name": "Menu Principal",
+        "type": "sandwich"
+    },
+    "itens": [
+        {
+            "name": "Empreendimento",
+            "routeUrl": "empreendimentos",
+            "icon": "feather:box"
+        },
+        {
+            "name": "Estabelecimento",
+            "routeUrl": "estabelecimentos",
+            "icon": "feather:box"
+        },
+        {
+            "name": "AreaDeNegocio",
+            "routeUrl": "areas-de-negocio",
+            "icon": "feather:box"
+        },
+        {
+            "name": "PlanoDeContas",
+            "routeUrl": "plano-de-contas",
+            "icon": "feather:box"
+        },
+        {
+            "name": "CentroDeCusto",
+            "routeUrl": "centros-de-custos",
+            "icon": "feather:box"
+        },
+        {
+            "name": "Projeto",
+            "routeUrl": "projetos",
+            "icon": "feather:box"
+        },
+        {
+            "name": "HistoricoPadrao",
+            "routeUrl": "historicos-padrao",
+            "icon": "feather:box"
+        },
+        {
+            "name": "PlanilhaDoOrcamento",
+            "routeUrl": "planilha-de-orcamento",
+            "icon": "feather:box"
+        },
+        {
+            "name": "EstruturaDoOrcamento",
+            "routeUrl": "estrutura-orcamento",
+            "icon": "feather:box"
+        },
+        {
+            "name": "FuncaoDePrevisao",
+            "routeUrl": "funcoes-de-previsao",
+            "icon": "feather:box"
+        },
+        {
+            "name": "Indicador",
+            "routeUrl": "indicadores",
+            "icon": "feather:box"
+        },
+        {
+            "name": "RegistroDeIndicador",
+            "routeUrl": "registros-de-indicadores",
+            "icon": "feather:box"
+        },
+        {
+            "name": "PartidaDoLancamento",
+            "routeUrl": "partida-do-lancamento",
+            "icon": "save"
+        },
+        {
+            "name": "UsuarioDoEstabelecimento",
+            "routeUrl": "usuarios-do-estabelecimento",
+            "icon": "feather:box"
+        },
+        {
+            "name": "TabelaMoeda",
+            "routeUrl": "tabela-moedas",
+            "icon": "feather:box"
+        },
+        {
+            "name": "CotacaoMoeda",
+            "routeUrl": "cotacao-moeda",
+            "icon": "feather:box"
+        },
+        {
+            "name": "ConsultaLivroRazao",
+            "routeUrl": "consulta-livro-razao",
+            "icon": "search_check_2"
+        }
+    ]
+}

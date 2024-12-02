@@ -1,0 +1,45 @@
+{
+    "config":{ 
+        "modified": "2024-09-30T14:21:14.298309Z", 
+        "description": "Cadastro de áreas de negócio dos estabelecimentos.",  
+        "name": "AreaDeNegocio", 
+        "apiUrl": "api/areas-de-negocio",
+        "route": "areas-de-negocio",
+        "searchableFields": [
+           "nome",
+           "id"
+        ], 
+        "localStorage": true,
+        "filter": true, 
+        "addNew": true, 
+        "edit": true, 
+        "columnsQuantity": 3,
+        "delete": true,
+        "isFormStepper": false,
+        "isLinearFormStepper": false
+    }, 
+    "attributes": [ 
+        { 
+            "name":"nome", 
+            "type": "string", 
+            "mask": "Texto", 
+            "isRequired": true, 
+            "visibleCard": true, 
+            "visibleGrid": true, 
+            "visibleFilter": true, 
+            "visibleList": true, 
+            "visibleForm": true 
+        },
+        { 
+            "name":"ativo", 
+            "type": "boolean", 
+            "mask": "Boolean", 
+            "isRequired": false, 
+            "visibleCard": true, 
+            "visibleGrid": true, 
+            "visibleFilter": true, 
+            "visibleList": true, 
+            "visibleForm": true 
+        }
+    ] 
+}

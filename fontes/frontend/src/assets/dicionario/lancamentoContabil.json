@@ -1,0 +1,472 @@
+{
+    "config":{
+        "modified": "2024-10-03T20:26:26.190354Z",
+        "description": "Tabela de lançamentos contabeis.",
+        "name": "LancamentoContabil",
+        "apiUrl": "api/lancamentos-contabeis",
+        "route": "lancamentos-contabeis",
+        "searchableFields": [
+           "formaLancamento"
+        ],
+        "localStorage": true,
+        "filter": true,
+        "addNew": true,
+        "edit": true,
+        "columnsQuantity": 2,
+        "delete": true,
+        "isFormStepper": false,
+        "isLinearFormStepper": false
+    },
+    "attributes": [
+        {
+            "name":"estabelecimento",
+            "type": "foreignKey",
+            "className": "Estabelecimento",
+            "many": false,
+            "apiUrl": "api/estabelecimentos",
+            "fieldDisplayedInLabel": "nome",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "forageinKey": "id",
+            "lookup": true,
+            "viewDetails": true,
+        "addNew": true,
+            "properties": [
+                {
+           "type": "foreignKey",
+            "name": "areaDeNegocio",
+            "fieldDisplayedInLabel": "nome",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+           "type": "manyToOne",
+            "name": "empreendimento",
+            "fieldDisplayedInLabel": "nome",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+                    "type": "string",
+                    "name": "nome",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+                    "type": "string",
+                    "name": "nomeFantasia",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+                    "type": "selector",
+                    "name": "tipoPessoa",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+                    "type": "string",
+                    "name": "cnpjcpf",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+                    "type": "string",
+                    "name": "logomarca",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+                    "type": "boolean",
+                    "name": "ativo",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                }
+            ] ,
+            "visibleForm": true
+        },
+        {
+            "name":"EstruturaDoOrcamento",
+            "type": "foreignKey",
+            "className": "EstruturaDoOrcamento",
+            "many": false,
+            "apiUrl": "api/estrutura-orcamento",
+            "fieldDisplayedInLabel": "nome",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "forageinKey": "id",
+            "lookup": true,
+            "viewDetails": true,
+        "addNew": true,
+            "properties": [
+                {
+           "type": "manyToOne",
+            "name": "PlanilhaDoOrcamento",
+            "fieldDisplayedInLabel": "nome",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+                    "type": "string",
+                    "name": "nome",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+           "type": "foreignKey",
+            "name": "funcaoPrevisao",
+            "fieldDisplayedInLabel": "nome",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+           "type": "foreignKey",
+            "name": "contaDebito",
+            "fieldDisplayedInLabel": "nome",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+           "type": "foreignKey",
+            "name": "contaCredito",
+            "fieldDisplayedInLabel": "nome",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+           "type": "foreignKey",
+            "name": "historicoPadrao",
+            "fieldDisplayedInLabel": "nome",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+           "type": "foreignKey",
+            "name": "centroDeCusto",
+            "fieldDisplayedInLabel": "nome",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+           "type": "foreignKey",
+            "name": "projeto",
+            "fieldDisplayedInLabel": "nome",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+                    "type": "boolean",
+                    "name": "ativo",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                }
+            ] ,
+            "visibleForm": true
+        },
+        {
+            "name":"formaLancamento",
+            "type": "selector",
+             "optionList": [
+                {
+                    "pt": "Manual",
+                    "en": "Manual",
+                    "id": "Manual"
+                },
+                {
+                    "pt": "Importado",
+                    "en": "Imported",
+                    "id": "Importado"
+                },
+                {
+                    "pt": "Gerado",
+                    "en": "Generated",
+                    "id": "Gerado"
+                }
+            ],
+            "selectItemsLimit": 1,
+            "mask": "Opcoes",
+            "isRequired": false,
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+        },
+        {
+            "name":"tipoLancamento",
+            "type": "selector",
+             "optionList": [
+                {
+                    "pt": "Previsto",
+                    "en": "Predicted",
+                    "id": "Previsto"
+                },
+                {
+                    "pt": "Previsto Otimista",
+                    "en": "Optimistic Forecast",
+                    "id": "PrevistoOtimista"
+                },
+                {
+                    "pt": "Previsto Pessimista",
+                    "en": "Pessimistic Forecast",
+                    "id": "PrevistoPessimista"
+                },
+                {
+                    "pt": "Realizado",
+                    "en": "Accomplished",
+                    "id": "Realizado"
+                }
+            ],
+            "selectItemsLimit": 1,
+            "mask": "Opcoes",
+            "isRequired": false,
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+        },
+        {
+            "name":"numeroLancamentoEcd",
+            "type": "string",
+            "mask": "Texto",
+            "isRequired": false,
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+        },
+        {
+            "name":"dataLancamento",
+            "type": "date",
+            "mask": "DateTime",
+            "isRequired": false,
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+        },
+        {
+            "name":"indicadorLancamento",
+            "type": "selector",
+             "optionList": [
+                {
+                    "pt": "Normal",
+                    "en": "Normal",
+                    "id": "Normal"
+                },
+                {
+                    "pt": "Encerramento",
+                    "en": "Closing",
+                    "id": "Encerramento"
+                },
+                {
+                    "pt": "Extemporaneo",
+                    "en": "Untimely",
+                    "id": "Extemporaneo"
+                }
+            ],
+            "selectItemsLimit": 1,
+            "mask": "Opcoes",
+            "isRequired": false,
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+        },
+        {
+            "name":"ativo",
+            "type": "boolean",
+            "mask": "Boolean",
+            "isRequired": false,
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+        },
+        {
+            "name": "PartidasdoLancamento",
+            "type": "subform",
+            "many": true,
+            "className": "PartidaDoLancamento",
+            "apiUrl": "",
+            "fieldDisplayedInLabel": "",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "forageinKey": "id",
+            "lookup": true,
+            "viewDetails": true,
+        "addNew": true,
+            "properties": [
+                {
+           "type": "foreignKey",
+            "name": "lancamentoContabil",
+            "fieldDisplayedInLabel": "",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+           "type": "foreignKey",
+            "name": "historicoPadrao",
+            "fieldDisplayedInLabel": "nome",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+           "type": "foreignKey",
+            "name": "centroDeCusto",
+            "fieldDisplayedInLabel": "nome",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+           "type": "foreignKey",
+            "name": "projeto",
+            "fieldDisplayedInLabel": "nome",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+           "type": "foreignKey",
+            "name": "contaDebito",
+            "fieldDisplayedInLabel": "nome",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+           "type": "foreignKey",
+            "name": "contaCredito",
+            "fieldDisplayedInLabel": "nome",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+                    "type": "string",
+                    "name": "historico",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+                    "type": "number",
+                    "name": "valor",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+                    "type": "number",
+                    "name": "valorMoedaIndexada",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+                    "type": "number",
+                    "name": "valorCotacaoMoeda",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                },
+                {
+           "type": "foreignKey",
+            "name": "moedaIndexada",
+            "fieldDisplayedInLabel": "nome",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+                }
+            ] ,
+            "visibleForm": true
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/ninth-glider-366922/ortiaapp/frontend', '-f', 'fontes/frontend/Dockerfile', 'fontes/frontend/']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/ninth-glider-366922/ortiaapp/frontend']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['run', 'deploy', 'ortiaappfrontend', '--image', 'gcr.io/ninth-glider-366922/ortiaapp/frontend', '--region', 'southamerica-east1', '--port', '8081', '--allow-unauthenticated']

@@ -1,0 +1,23 @@
+{
+    "config":{ 
+        "modified": "2024-09-30T14:21:24.7654Z", 
+        "description": "Livro Razão",  
+        "name": "ConsultaLivroRazao", 
+        "apiUrl": "api/consulta-livro-razao",
+        "route": "consulta-livro-razao",
+        "searchableFields": [
+           "historico",
+           "nomeContaContrapartida"
+        ], 
+        "localStorage": true,
+        "filter": true, 
+        "addNew": true, 
+        "edit": true, 
+        "columnsQuantity": 3,
+        "delete": true,
+        "isFormStepper": false,
+        "isLinearFormStepper": false
+    }, 
+    "attributes": [ 
+    ] 
+}
