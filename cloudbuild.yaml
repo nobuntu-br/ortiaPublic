@@ -1,7 +1,7 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/ninth-glider-366922/ortiapublicbackend', '.']
-    dir: ''
+    dir: 'fontes/backend'
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/ninth-glider-366922/ortiapublicbackend']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -13,7 +13,7 @@ steps:
            '--allow-unauthenticated']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/ninth-glider-366922/ortiapublicfrontend', '.']
-    dir: ''
+    dir: 'fontes/frontend'
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/ninth-glider-366922/ortiapublicfrontend']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
