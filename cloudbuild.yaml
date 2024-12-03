@@ -5,12 +5,16 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/ninth-glider-366922/ortiapublicbackend']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: gcloud
-    args: ['run', 'deploy', 'ortiapublicbackend',
-           '--image=gcr.io/ninth-glider-366922/ortiapublicbackend',
-           '--region=southamerica-east1',
-           '--platform=managed',
-           '--allow-unauthenticated']
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        gcloud run deploy ortiapublicbackend \
+          --image=gcr.io/ninth-glider-366922/ortiapublicbackend \
+          --region=southamerica-east1 \
+          --platform=managed \
+          --allow-unauthenticated \
+          --update-secrets /fontes/backend/.env=projects/ninth-glider-366922/secrets/backend-env:latest
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/ninth-glider-366922/ortiapublicfrontend', '.']
     dir: 'fontes/frontend'
