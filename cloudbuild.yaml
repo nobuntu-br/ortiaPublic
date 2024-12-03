@@ -28,7 +28,7 @@ steps:
       '--region=southamerica-east1',
       '--platform=managed',
       '--allow-unauthenticated',
-      '--port 8081'
+      '--port 8081',
       '--timeout=300s'
 
     ]
