@@ -5,31 +5,24 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/ninth-glider-366922/ortiapublicbackend']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: bash
-    args:
-      - -c
-      - |
-        gcloud run deploy ortiapublicbackend \
-          --image=gcr.io/ninth-glider-366922/ortiapublicbackend \
-          --region=southamerica-east1 \
-          --platform=managed \
-          --allow-unauthenticated \
-          --update-secrets /app/.env=projects/ninth-glider-366922/secrets/backend-env:latest
+    entrypoint: gcloud
+    args: ['run', 'deploy', 'ortiapublicbackend',
+           '--image=gcr.io/ninth-glider-366922/ortiapublicbackend',
+           '--region=southamerica-east1',
+           '--platform=managed',
+           '--allow-unauthenticated']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/ninth-glider-366922/ortiapublicfrontend', '.']
     dir: 'fontes/frontend'
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/ninth-glider-366922/ortiapublicfrontend']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: bash
-    args:
-      - -c
-      - |
-        gcloud run deploy ortiapublicfrontend \
-          --image=gcr.io/ninth-glider-366922/ortiapublicfrontend \
-          --region=southamerica-east1 \
-          --platform=managed \
-          --allow-unauthenticated
+    entrypoint: gcloud
+    args: ['run', 'deploy', 'ortiapublicfrontend',
+           '--image=gcr.io/ninth-glider-366922/ortiapublicfrontend',
+           '--region=southamerica-east1',
+           '--platform=managed',
+           '--allow-unauthenticated']
 images:
   - 'gcr.io/ninth-glider-366922/ortiapublicbackend'
   - 'gcr.io/ninth-glider-366922/ortiapublicfrontend'
