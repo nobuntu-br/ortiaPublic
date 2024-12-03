@@ -6,11 +6,14 @@ steps:
     args: ['push', 'gcr.io/ninth-glider-366922/ortiapublicbackend']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
-    args: ['run', 'deploy', 'ortiapublicbackend',
-           '--image=gcr.io/ninth-glider-366922/ortiapublicbackend',
-           '--region=southamerica-east1',
-           '--platform=managed',
-           '--allow-unauthenticated']
+    args: [
+      'run', 'deploy', 'ortiapublicbackend',
+      '--image=gcr.io/ninth-glider-366922/ortiapublicbackend',
+      '--region=southamerica-east1',
+      '--platform=managed',
+      '--allow-unauthenticated',
+      '--set-env-vars', 'PORT=8080'
+    ]
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/ninth-glider-366922/ortiapublicfrontend', '.']
     dir: 'fontes/frontend'
@@ -18,11 +21,14 @@ steps:
     args: ['push', 'gcr.io/ninth-glider-366922/ortiapublicfrontend']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
-    args: ['run', 'deploy', 'ortiapublicfrontend',
-           '--image=gcr.io/ninth-glider-366922/ortiapublicfrontend',
-           '--region=southamerica-east1',
-           '--platform=managed',
-           '--allow-unauthenticated']
+    args: [
+      'run', 'deploy', 'ortiapublicfrontend',
+      '--image=gcr.io/ninth-glider-366922/ortiapublicfrontend',
+      '--region=southamerica-east1',
+      '--platform=managed',
+      '--allow-unauthenticated',
+      '--set-env-vars', 'PORT=8081'
+    ]
 images:
   - 'gcr.io/ninth-glider-366922/ortiapublicbackend'
   - 'gcr.io/ninth-glider-366922/ortiapublicfrontend'
