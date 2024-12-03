@@ -11,8 +11,7 @@ steps:
       '--image=gcr.io/ninth-glider-366922/ortiapublicbackend',
       '--region=southamerica-east1',
       '--platform=managed',
-      '--allow-unauthenticated',
-      '--set-env-vars', 'PORT=8080'
+      '--allow-unauthenticated'
     ]
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/ninth-glider-366922/ortiapublicfrontend', '.']
@@ -26,8 +25,7 @@ steps:
       '--image=gcr.io/ninth-glider-366922/ortiapublicfrontend',
       '--region=southamerica-east1',
       '--platform=managed',
-      '--allow-unauthenticated',
-      '--set-env-vars', 'PORT=8081'
+      '--allow-unauthenticated'
     ]
 images:
   - 'gcr.io/ninth-glider-366922/ortiapublicbackend'
