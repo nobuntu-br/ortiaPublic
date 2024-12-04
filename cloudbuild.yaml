@@ -12,7 +12,7 @@ steps:
       '--region=southamerica-east1',
       '--platform=managed',
       '--allow-unauthenticated',
-      '--port', '8080', 
+      '--port=8080', 
       '--timeout=300s'
     ]
   - name: 'gcr.io/cloud-builders/docker'
