@@ -1,14 +1,14 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/ninth-glider-366922/ortiapublicbackend', '.']
+    args: ['build', '-t', 'southamerica-east1-docker.pkg.dev/ninth-glider-366922/nobuntu/backend/ortiapublic', '.']
     dir: 'fontes/backend'
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/ninth-glider-366922/ortiapublicbackend']
+    args: ['push', 'southamerica-east1-docker.pkg.dev/ninth-glider-366922/nobuntu/backend/ortiapublic']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
     args: [
       'run', 'deploy', 'ortiapublicbackend',
-      '--image=gcr.io/ninth-glider-366922/ortiapublicbackend',
+      '--image=southamerica-east1-docker.pkg.dev/ninth-glider-366922/nobuntu/backend/ortiapublic',
       '--region=southamerica-east1',
       '--platform=managed',
       '--allow-unauthenticated',
@@ -16,20 +16,21 @@ steps:
       '--timeout=300s'
     ]
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/ninth-glider-366922/ortiapublicfrontend', '.']
+    args: ['build', '-t', 'southamerica-east1-docker.pkg.dev/ninth-glider-366922/nobuntu/frontend/ortiapublic', '.']
     dir: 'fontes/frontend'
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/ninth-glider-366922/ortiapublicfrontend']
+    args: ['push', 'southamerica-east1-docker.pkg.dev/ninth-glider-366922/nobuntu/frontend/ortiapublic']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
     args: [
       'run', 'deploy', 'ortiapublicfrontend',
-      '--image=gcr.io/ninth-glider-366922/ortiapublicfrontend',
+      '--image=southamerica-east1-docker.pkg.dev/ninth-glider-366922/nobuntu/frontend/ortiapublic',
       '--region=southamerica-east1',
       '--platform=managed',
       '--allow-unauthenticated',
+      '--port=8081',
       '--timeout=300s'
     ]
 images:
-  - 'gcr.io/ninth-glider-366922/ortiapublicbackend'
-  - 'gcr.io/ninth-glider-366922/ortiapublicfrontend'
+  - 'southamerica-east1-docker.pkg.dev/ninth-glider-366922/nobuntu/backend/ortiapublic'
+  - 'southamerica-east1-docker.pkg.dev/ninth-glider-366922/nobuntu/frontend/ortiapublic'
