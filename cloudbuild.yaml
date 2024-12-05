@@ -13,6 +13,7 @@ steps:
       '--platform=managed',
       '--allow-unauthenticated',
       '--port=8080', 
+      '--vpc-connector=sql-vpc',
       '--timeout=300s'
     ]
   - name: 'gcr.io/cloud-builders/docker'
